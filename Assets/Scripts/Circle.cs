@@ -29,6 +29,7 @@ public class Circle : MonoBehaviour {
         transform.localScale = Vector3.one * Mathf.Lerp (1, GameManager.Instance.maxSizeScale, (level / GameManager.Instance.maxLevel));
     }
     Color GetColor (int level) {
+        // 踩坑, Lerp和Color千万不要用int
         return Color.Lerp (GameManager.Instance.minColor, GameManager.Instance.maxColor, (level / GameManager.Instance.maxLevel));
     }
 }
